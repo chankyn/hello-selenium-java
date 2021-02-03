@@ -23,6 +23,7 @@ public class RobobarTest {
 
     @BeforeEach
     public void setUp() {
+        
         FirefoxOptions options = new FirefoxOptions();
         options.setHeadless(true);
         driver = new FirefoxDriver(options);
@@ -33,6 +34,7 @@ public class RobobarTest {
     public void tearDown() {
         driver.quit();
     }
+    /*
     @Test
     public void inicial() {
         driver.get("http://localhost:3000/#!/");
@@ -83,7 +85,7 @@ public class RobobarTest {
         driver.findElement((By.xpath("//button[@type='submit']"))).click();
         new WebDriverWait(driver, 5)
                 .until(ExpectedConditions.presenceOfElementLocated((By.xpath("//p[contains(.,'Coming right up! ~bzzzt~')]"))));
-    }
+    }*/
     @Test
     public void Robobar() {
         driver.get("http://localhost:3000/#!/");

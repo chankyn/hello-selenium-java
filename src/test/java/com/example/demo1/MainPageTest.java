@@ -37,14 +37,14 @@ public class MainPageTest {
 
         $(byName("q")).shouldHave(attribute("value", "Selenium"));
     }
-
+    /*
     @Test
     public void toolsMenu() {
         mainPage.toolsMenu.hover();
 
         $(byClassName("menu-main-popup-content")).shouldBe(visible);
     }
-/*
+
     @Test
     public void navigationToAllTools() {
         mainPage.seeAllToolsButton.click();
