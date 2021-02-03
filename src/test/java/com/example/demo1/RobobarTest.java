@@ -98,20 +98,20 @@ public class RobobarTest {
         new WebDriverWait(driver, 10)
                 .until(ExpectedConditions.presenceOfElementLocated((By.className("ng-binding"))));
 
-        vars.put("initial", driver.findElement(By.cssSelector("tr:nth-child(4) > .ng-binding")).getText());
-        assertEquals(vars.get("initial").toString(), "€0.00");
+        String v = driver.findElement(By.cssSelector("tr:nth-child(4) > .ng-binding")).getText();
+        assertEquals(v, "€0.00");
 
         driver.findElement((By.xpath("//div[2]/button"))).click();
-        vars.put("initial", driver.findElement(By.cssSelector("tr:nth-child(4) > .ng-binding")).getText());
-        assertEquals(vars.get("initial").toString(), "€1.25");
+        v = driver.findElement(By.cssSelector("tr:nth-child(4) > .ng-binding")).getText();
+        assertEquals(v, "€1.25");
 
         driver.findElement((By.xpath("//tr[2]/td[3]/div/div/div[2]/button"))).click();
-        vars.put("initial", driver.findElement(By.cssSelector("tr:nth-child(4) > .ng-binding")).getText());
-        assertEquals(vars.get("initial").toString(), "€3.25");
+        v = driver.findElement(By.cssSelector("tr:nth-child(4) > .ng-binding")).getText();
+        assertEquals(v, "€3.25");
 
         driver.findElement((By.xpath("//tr[3]/td[3]/div/div/div[2]/button"))).click();
-        vars.put("initial", driver.findElement(By.cssSelector("tr:nth-child(4) > .ng-binding")).getText());
-        assertEquals(vars.get("initial").toString(), "€6.25");
+        v = driver.findElement(By.cssSelector("tr:nth-child(4) > .ng-binding")).getText();
+        assertEquals(v, "€6.25");
 
         //Submit
         driver.findElement(By.xpath("//div[3]/div/button")).click();
