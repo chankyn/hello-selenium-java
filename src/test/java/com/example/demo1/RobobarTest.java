@@ -23,7 +23,11 @@ public class RobobarTest {
 
     @BeforeEach
     public void setUp() {
-        
+        /*
+        Configuration.startMaximized = true;
+        open("about:blank");
+        driver = getWebDriver();
+        */
         FirefoxOptions options = new FirefoxOptions();
         options.setHeadless(true);
         driver = new FirefoxDriver(options);
@@ -91,18 +95,23 @@ public class RobobarTest {
         driver.get("http://localhost:3000/#!/");
 
         //Check values
-        String value = new WebDriverWait(driver, 10)
-                .until(ExpectedConditions.presenceOfElementLocated((By.className("ng-binding")))).getText();
-        
+        new WebDriverWait(driver, 10)
+                .until(ExpectedConditions.presenceOfElementLocated((By.className("ng-binding"))));
+
+        vars.put("initial", driver.findElement(By.cssSelector("tr:nth-child(4) > .ng-binding")).getText());
+        assertEquals(vars.get("initial").toString(), "€0.00");
+
         driver.findElement((By.xpath("//div[2]/button"))).click();
-        value = driver.findElement(By.className("ng-binding")).getText();
-        assertNotEquals(value,"€1.25");
+        vars.put("initial", driver.findElement(By.cssSelector("tr:nth-child(4) > .ng-binding")).getText());
+        assertEquals(vars.get("initial").toString(), "€1.25");
+
         driver.findElement((By.xpath("//tr[2]/td[3]/div/div/div[2]/button"))).click();
-        value = driver.findElement(By.className("ng-binding")).getText();
-        assertNotEquals(value,"€3.25");
+        vars.put("initial", driver.findElement(By.cssSelector("tr:nth-child(4) > .ng-binding")).getText());
+        assertEquals(vars.get("initial").toString(), "€3.25");
+
         driver.findElement((By.xpath("//tr[3]/td[3]/div/div/div[2]/button"))).click();
-        value = driver.findElement(By.className("ng-binding")).getText();
-        assertNotEquals(value,"€6.25");
+        vars.put("initial", driver.findElement(By.cssSelector("tr:nth-child(4) > .ng-binding")).getText());
+        assertEquals(vars.get("initial").toString(), "€6.25");
 
         //Submit
         driver.findElement(By.xpath("//div[3]/div/button")).click();

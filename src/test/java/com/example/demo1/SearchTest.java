@@ -16,6 +16,7 @@ import java.util.Map;
 
 
 public class SearchTest {
+
     private WebDriver driver;
     private Map<String, Object> vars;
     JavascriptExecutor js;
