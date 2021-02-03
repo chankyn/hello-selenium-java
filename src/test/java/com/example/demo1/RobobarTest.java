@@ -3,6 +3,7 @@ package com.example.demo1;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -90,7 +91,7 @@ public class RobobarTest {
         //Check values
         String value = new WebDriverWait(driver, 10)
                 .until(ExpectedConditions.presenceOfElementLocated((By.className("ng-binding")))).getText();
-        assertNotEquals(value,"€0.00");
+        
         driver.findElement((By.xpath("//div[2]/button"))).click();
         value = driver.findElement(By.className("ng-binding")).getText();
         assertNotEquals(value,"€1.25");
