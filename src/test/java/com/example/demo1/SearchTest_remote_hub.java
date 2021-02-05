@@ -28,7 +28,6 @@ public class SearchTest_remote_hub {
     public void setUp() throws MalformedURLException {
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("browserName",Configuration.browser);
-        System.out.println(capabilities.getCapability("browserName"));
         driver = new RemoteWebDriver(new URL("http://10.250.9.2:4444"), capabilities);
         js = (JavascriptExecutor) driver;
         vars = new HashMap<String, Object>();

@@ -14,12 +14,9 @@ pipeline {
         }
         stage('Test') {
             steps {
-                configFileProvider([configFile(fileId: 'hello-grails-gradle.properties', targetLocation: 'gradle.properties')]) {
-                    withGradle {
-                        sh './gradlew clean test'
-                    }
+                withGradle {
+                    sh './gradlew -Dgeb.env=chrome clean test'
                 }
-
             }
             post {
                 always {

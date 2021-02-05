@@ -1,5 +1,6 @@
 package com.example.demo1;
 
+import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -29,7 +30,8 @@ public class RobobarTest_remote_hub {
     @BeforeEach
     public void setUp() throws MalformedURLException {
         DesiredCapabilities capabilities = new DesiredCapabilities();
-        capabilities.setCapability("browserName","firefox");
+        //capabilities.setCapability("browserName","firefox");
+        capabilities.setCapability("browserName", Configuration.browser);
         driver = new RemoteWebDriver(new URL("http://10.250.9.2:4444"), capabilities);
         js = (JavascriptExecutor) driver;
         vars = new HashMap<String, Object>();
