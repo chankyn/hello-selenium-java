@@ -6,7 +6,7 @@ pipeline {
         BROWSER = 'chrome'
     }
     stages {
-        
+
         stage('Test') {
             steps {
                 withGradle {

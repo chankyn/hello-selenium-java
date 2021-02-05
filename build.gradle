@@ -29,7 +29,7 @@ dependencies {
 
 test {
     //systemProperty "selenide.browser", "firefox"
-    systemProperties["selenide.browser"] = "firefox"
+    systemProperties["selenide.browser"] = browser
     systemProperties["selenide.remote"] = "http://10.250.9.2:4444"
     useJUnitPlatform()
 }
