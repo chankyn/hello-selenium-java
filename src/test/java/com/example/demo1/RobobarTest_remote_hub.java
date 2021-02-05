@@ -29,7 +29,7 @@ public class RobobarTest_remote_hub {
     @BeforeEach
     public void setUp() throws MalformedURLException {
         DesiredCapabilities capabilities = new DesiredCapabilities();
-        capabilities.setCapability("browserName","chrome");
+        capabilities.setCapability("browserName","firefox");
         driver = new RemoteWebDriver(new URL("http://10.250.9.2:4444"), capabilities);
         js = (JavascriptExecutor) driver;
         vars = new HashMap<String, Object>();
@@ -44,7 +44,7 @@ public class RobobarTest_remote_hub {
         driver.get("http://10.250.9.2:3000/#!/");
 
         //Check values
-        new WebDriverWait(driver, 10)
+        new WebDriverWait(driver, 30)
                 .until(ExpectedConditions.presenceOfElementLocated((By.className("ng-binding"))));
 
         String v = driver.findElement(By.cssSelector("tr:nth-child(4) > .ng-binding")).getText();
@@ -66,7 +66,7 @@ public class RobobarTest_remote_hub {
         driver.findElement(By.xpath("//div[3]/div/button")).click();
 
         //Check age
-        new WebDriverWait(driver, 10)
+        new WebDriverWait(driver, 30)
                 .until(ExpectedConditions.presenceOfElementLocated((By.id("ageInput")))).click();
         driver.findElement(By.id("ageInput")).sendKeys("21");
 
@@ -74,7 +74,7 @@ public class RobobarTest_remote_hub {
         driver.findElement((By.xpath("//button[@type='submit']"))).click();
 
         //Check success
-        new WebDriverWait(driver, 10)
+        new WebDriverWait(driver, 30)
                 .until(ExpectedConditions.presenceOfElementLocated((By.xpath("//p[contains(.,'Coming right up! ~bzzzt~')]"))));
     }
 

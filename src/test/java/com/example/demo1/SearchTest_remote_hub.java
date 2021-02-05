@@ -26,7 +26,7 @@ public class SearchTest_remote_hub {
     @BeforeEach
     public void setUp() throws MalformedURLException {
         DesiredCapabilities capabilities = new DesiredCapabilities();
-        capabilities.setCapability("browserName","chrome");
+        capabilities.setCapability("browserName","operablink");
         driver = new RemoteWebDriver(new URL("http://10.250.9.2:4444"), capabilities);
         js = (JavascriptExecutor) driver;
         vars = new HashMap<String, Object>();
