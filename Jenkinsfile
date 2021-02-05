@@ -17,7 +17,7 @@ pipeline {
         stage('Test') {
             steps {
                 withGradle {
-                    sh './gradlew -Dgeb.env=${BROWSER} clean test'
+                    sh './gradlew -Pbrowser=${BROWSER} clean test'
                 }
             }
             post {
