@@ -28,8 +28,8 @@ dependencies {
 }
 
 test {
-    //systemProperty "selenide.browser", "firefox"
-    systemProperties["selenide.browser"] = browser
+    systemProperty "selenide.browser", "firefox"
+    //systemProperties["selenide.browser"] = browser
     useJUnitPlatform()
 }
 allure {

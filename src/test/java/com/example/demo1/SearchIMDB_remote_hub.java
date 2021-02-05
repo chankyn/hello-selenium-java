@@ -28,7 +28,7 @@ public class SearchIMDB_remote_hub {
     public void setUp() throws MalformedURLException {
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setBrowserName(System.getProperty("browser","firefox"));
-        driver = new RemoteWebDriver(new URL("http://10.250.9.2:4444/wd/hub"), capabilities);
+        driver = new RemoteWebDriver(new URL("http://10.250.9.2:4444"), capabilities);
         js = (JavascriptExecutor) driver;
         vars = new HashMap<String, Object>();
     }
