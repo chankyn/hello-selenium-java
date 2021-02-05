@@ -2,7 +2,9 @@
 
 pipeline {
     agent any
-  
+    environment {
+        BROWSER = 'chrome'
+    }
     stages {
         
         stage('Build') {
@@ -15,7 +17,7 @@ pipeline {
         stage('Test') {
             steps {
                 withGradle {
-                    sh './gradlew -Dgeb.env=chrome clean test'
+                    sh './gradlew -Dgeb.env=${BROWSER} clean test'
                 }
             }
             post {
