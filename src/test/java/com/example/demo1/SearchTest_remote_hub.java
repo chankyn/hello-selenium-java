@@ -17,6 +17,9 @@ import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
 
+import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
+
 
 public class SearchTest_remote_hub {
 
@@ -26,9 +29,10 @@ public class SearchTest_remote_hub {
 
     @BeforeEach
     public void setUp() throws MalformedURLException {
-        DesiredCapabilities capabilities = new DesiredCapabilities();
-        capabilities.setCapability("browserName", Configuration.browser);
-        driver = new RemoteWebDriver(new URL("http://10.250.9.2:4444"), capabilities);
+        open("about:blank");
+        driver = getWebDriver();
+
+
         js = (JavascriptExecutor) driver;
         vars = new HashMap<String, Object>();
     }
