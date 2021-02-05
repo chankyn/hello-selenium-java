@@ -41,7 +41,7 @@ public class SearchTest_remote_hub {
         driver.get("https://www.google.es/");
         driver.manage().window().setSize(new Dimension(1183, 807));
         driver.switchTo().frame(0);
-        driver.findElement(By.cssSelector("#introAgreeButton .RveJvd")).click();
+        driver.findElement(By.cssSelector("#introAgreeButton")).click();
         driver.switchTo().defaultContent();
         driver.findElement(By.name("q")).click();
         driver.findElement(By.name("q")).sendKeys("devops");
