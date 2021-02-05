@@ -27,7 +27,6 @@ public class SearchIMDB_remote_hub {
     @BeforeEach
     public void setUp() throws MalformedURLException {
         DesiredCapabilities capabilities = new DesiredCapabilities();
-        //capabilities.setCapability(CapabilityType.BROWSER_NAME, "CHROME");
         capabilities.setCapability("browserName", Configuration.browser);
         driver = new RemoteWebDriver(new URL("http://10.250.9.2:4444/wd/hub"), capabilities);
         js = (JavascriptExecutor) driver;

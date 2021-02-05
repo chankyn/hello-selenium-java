@@ -29,7 +29,7 @@ dependencies {
 
 test {
     //systemProperty "selenide.browser", "firefox"
-    systemProperty "geb.env", System.getProperty('geb.env')
+    systemProperties["selenide.browser"] = browser
     useJUnitPlatform()
 }
 allure {
