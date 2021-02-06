@@ -1,6 +1,7 @@
 plugins {
     id 'java'
     id 'io.qameta.allure' version '2.8.1'
+    id 'checkstyle'
 }
 
 group 'com.example'
@@ -41,3 +42,7 @@ allure {
         version = "${allureVersion}"
     }
 }
+checkstyle {
+    ignoreFailures = true
+}
+
